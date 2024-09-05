@@ -1,11 +1,13 @@
 package com.ismailmesutmujde.kotlinlandmarkbook.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ismailmesutmujde.kotlinlandmarkbook.databinding.RecyclerRowBinding
 import com.ismailmesutmujde.kotlinlandmarkbook.model.Landmark
+import com.ismailmesutmujde.kotlinlandmarkbook.view.DetailsActivity
 
 class LandmarkAdapter(val landmarkList : ArrayList<Landmark>) : RecyclerView.Adapter<LandmarkAdapter.LandmarkHolder>() {
     class LandmarkHolder(val binding: RecyclerRowBinding) : RecyclerView.ViewHolder(binding.root) {
@@ -21,6 +23,11 @@ class LandmarkAdapter(val landmarkList : ArrayList<Landmark>) : RecyclerView.Ada
     // bağlama işlemi yapıldıktan sonra yapılacak işlemler burada yapılır.
     override fun onBindViewHolder(holder: LandmarkHolder, position: Int) {
         holder.binding.recyclerViewTextView.text = landmarkList.get(position).name
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, DetailsActivity::class.java)
+            intent.putExtra("landmark", landmarkList.get(position))
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     // recycler_row'dan kaç tane oluşturulacaksa burada yapılır.

@@ -1,5 +1,7 @@
 package com.ismailmesutmujde.kotlinlandmarkbook.view
 
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +34,10 @@ class MainActivity : AppCompatActivity() {
         landmarkList.add(colosseum)
         landmarkList.add(eiffel)
         landmarkList.add(londonBridge)
+
+        // Inefficient (Verimsiz)
+        // val pisaBitmap = BitmapFactory.decodeResource(resources, R.drawable.pisa)
+
 
         // RECYCLER VIEW
         bindingMainActivity.recyclerView.layoutManager = LinearLayoutManager(this)
