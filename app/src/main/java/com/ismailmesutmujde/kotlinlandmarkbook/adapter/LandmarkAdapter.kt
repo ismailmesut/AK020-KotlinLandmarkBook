@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.ismailmesutmujde.kotlinlandmarkbook.MySingleton
 import com.ismailmesutmujde.kotlinlandmarkbook.databinding.RecyclerRowBinding
 import com.ismailmesutmujde.kotlinlandmarkbook.model.Landmark
 import com.ismailmesutmujde.kotlinlandmarkbook.view.DetailsActivity
@@ -25,7 +26,9 @@ class LandmarkAdapter(val landmarkList : ArrayList<Landmark>) : RecyclerView.Ada
         holder.binding.recyclerViewTextView.text = landmarkList.get(position).name
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetailsActivity::class.java)
-            intent.putExtra("landmark", landmarkList.get(position))
+            //chosenLandmark = landmarkList.get(position)
+            //intent.putExtra("landmark", landmarkList.get(position))
+            MySingleton.chosenLandmark = landmarkList.get(position)
             holder.itemView.context.startActivity(intent)
         }
     }

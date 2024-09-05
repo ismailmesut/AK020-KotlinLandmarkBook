@@ -10,7 +10,7 @@ import com.ismailmesutmujde.kotlinlandmarkbook.adapter.LandmarkAdapter
 import com.ismailmesutmujde.kotlinlandmarkbook.databinding.ActivityMainBinding
 import com.ismailmesutmujde.kotlinlandmarkbook.model.Landmark
 
-
+//var chosenLandmark : Landmark? = null
 class MainActivity : AppCompatActivity() {
 
     private lateinit var bindingMainActivity: ActivityMainBinding
