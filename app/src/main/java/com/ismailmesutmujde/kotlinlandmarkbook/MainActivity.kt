@@ -1,6 +1,8 @@
 package com.ismailmesutmujde.kotlinlandmarkbook
 
 import android.os.Bundle
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.ismailmesutmujde.kotlinlandmarkbook.databinding.ActivityMainBinding
 
@@ -28,5 +30,12 @@ class MainActivity : AppCompatActivity() {
         landmarkList.add(colosseum)
         landmarkList.add(eiffel)
         landmarkList.add(londonBridge)
+
+        // Adapter : Layout & Data
+
+        // Mapping
+        val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, landmarkList.map { landmark -> landmark.name })
+        bindingMainActivity.listView.adapter = adapter
+
     }
 }
