@@ -13,5 +13,6 @@ class DetailsActivity : AppCompatActivity() {
         val view = bindingDetailsActivity.root
         setContentView(view)
 
+
     }
 }
