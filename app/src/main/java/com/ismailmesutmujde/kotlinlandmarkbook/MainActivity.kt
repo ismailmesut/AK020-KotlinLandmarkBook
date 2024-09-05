@@ -1,5 +1,6 @@
 package com.ismailmesutmujde.kotlinlandmarkbook
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -36,6 +37,10 @@ class MainActivity : AppCompatActivity() {
         // Mapping
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, landmarkList.map { landmark -> landmark.name })
         bindingMainActivity.listView.adapter = adapter
-
+        bindingMainActivity.listView.onItemClickListener = AdapterView.OnItemClickListener{parent, view, position, id ->
+            val intent = Intent(MainActivity@this, DetailsActivity::class.java)
+            intent.putExtra("landmark", landmarkList.get(position))
+            startActivity(intent)
+        }
     }
 }
