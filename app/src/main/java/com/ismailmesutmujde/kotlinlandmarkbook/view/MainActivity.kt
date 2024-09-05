@@ -1,11 +1,12 @@
-package com.ismailmesutmujde.kotlinlandmarkbook
+package com.ismailmesutmujde.kotlinlandmarkbook.view
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.ismailmesutmujde.kotlinlandmarkbook.R
+import com.ismailmesutmujde.kotlinlandmarkbook.adapter.LandmarkAdapter
 import com.ismailmesutmujde.kotlinlandmarkbook.databinding.ActivityMainBinding
+import com.ismailmesutmujde.kotlinlandmarkbook.model.Landmark
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,9 +33,18 @@ class MainActivity : AppCompatActivity() {
         landmarkList.add(eiffel)
         landmarkList.add(londonBridge)
 
+        // RECYCLER VIEW
+        bindingMainActivity.recyclerView.layoutManager = LinearLayoutManager(this)
+        val landmarkAdapter = LandmarkAdapter(landmarkList)
+        bindingMainActivity.recyclerView.adapter = landmarkAdapter
+
+        /*
+        // LISTVIEW KULLANIMI
+
         // Adapter : Layout & Data
 
         // Mapping
+
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, landmarkList.map { landmark -> landmark.name })
         bindingMainActivity.listView.adapter = adapter
         bindingMainActivity.listView.onItemClickListener = AdapterView.OnItemClickListener{parent, view, position, id ->
@@ -42,5 +52,7 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("landmark", landmarkList.get(position))
             startActivity(intent)
         }
+
+        */
     }
 }

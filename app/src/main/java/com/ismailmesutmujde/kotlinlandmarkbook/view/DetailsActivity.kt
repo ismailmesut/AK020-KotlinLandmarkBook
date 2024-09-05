@@ -1,8 +1,9 @@
-package com.ismailmesutmujde.kotlinlandmarkbook
+package com.ismailmesutmujde.kotlinlandmarkbook.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ismailmesutmujde.kotlinlandmarkbook.databinding.ActivityDetailsBinding
+import com.ismailmesutmujde.kotlinlandmarkbook.model.Landmark
 
 class DetailsActivity : AppCompatActivity() {
 

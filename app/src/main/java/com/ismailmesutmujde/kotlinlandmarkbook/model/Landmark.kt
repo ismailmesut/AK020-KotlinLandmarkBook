@@ -1,4 +1,4 @@
-package com.ismailmesutmujde.kotlinlandmarkbook
+package com.ismailmesutmujde.kotlinlandmarkbook.model
 
 import java.io.Serializable
 
